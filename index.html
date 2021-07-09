@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Questrial&display=swap" rel="stylesheet">
+    <title>Weather App</title>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="container">
+            <div class="container-today">
+                <div class="search-container">
+                   <div id="search"></div>
+                   <input type="text" id="city" placeholder="Search for places...">
+                </div>
+                <img src="img/cloud-raining-sunny.png" alt="">
+                <h1 id="today-degrees">12°c</h1>
+                <h2 id="today-date">Monday,<span>16:00</span></h2>
+                <ul id="today-weather__list">
+                    <li  class="today-weather__list--item">
+                        <div id="cloud-icon"></div>
+                        <p>Mostly Cloudy</p>
+                      </li>
+                    <li  class="today-weather__list--item">
+                      <div id="rain-icon"></div>
+                      <p>Rain - 30%</p>
+                    </li>
+                  </ul>
+                <img src="img/city.jpg" class="image-city" alt="currentcity">
+                <h3 class="current-city"></h3>
+            </div>
+            <div class="container-time">
+                <nav class="navbar">
+                      <div class="nav__days">
+                          <a href="#">Today</a>
+                          <a href="#">Week</a>
+                      </div>
+                      <div class="nav__weather">
+                          <a href="#">C°</a>
+                          <a href="#">F°</a>
+                          <img src="img/image.png" class="img__user" alt="img">
+                      </div>
+                </nav>
+                <div class="container-time__week">
+                  <ul id="week">
+                    <li class="day"><p class="day-title">Sun</p><img id="sun" class="day-img" src="img/cloud-raining-sunny.png"> <div class="day-degrees"><h3 class="max">12°</h3><h3 class="min">7°</h3></div></li>
+                    <li class="day"><p class="day-title">Mon</p><img id="mon" class="day-img" src="img/sun.png"> <div class="day-degrees"><h3 class="max">12°</h3><h3 class="min">7°</h3></div></li>
+                    <li class="day"><p class="day-title">Tue</p><img id="tue" class="day-img" src="img/cloud-raining-sunny.png"> <div class="day-degrees"><h3 class="max">12°</h3><h3 class="min">7°</h3></div></li>
+                    <li class="day"><p class="day-title">Wed</p><img id="wed" class="day-img" src="img/cloud-raining-sunny.png"> <div class="day-degrees"><h3 class="max">12°</h3><h3 class="min">7°</h3></div></li>
+                    <li class="day"><p class="day-title">Thu</p><img id="thu" class="day-img" src="img/cloud-raining-sunny.png"> <div class="day-degrees"><h3 class="max">12°</h3><h3 class="min">7°</h3></div></li>
+                    <li class="day"><p class="day-title">Fri</p><img id="fri" class="day-img" src="img/cloud-raining-sunny.png"> <div class="day-degrees"><h3 class="max">12°</h3><h3 class="min">7°</h3></div></li>
+                    <li class="day"><p class="day-title">Sat</p><img id="sat" class="day-img" src="img/cloud-raining-sunny.png"> <div class="day-degrees"><h3 class="max">12°</h3><h3 class="min">7°</h3></div></li>
+                 </ul>
+                </div>
+       
+                <div class="container-time__highlights">
+                  <h2 class="highlights__title">Today's Highlights</h2>
+                  <ul id="highlights">
+                    <div class="highlight-container">
+                      <li>
+                        <div id="uv" class="highlight">
+                          <h3>UV Index</h3>
+                        </div>
+                      </li>
+                        <li>
+                        <div id="wind" class="highlight">
+                          <h3>Wind Status</h3>
+                        </div>
+                      </li>
+                        <li>
+                        <div id="sunrise" class="highlight">
+                          <h3>Sunrise & Sunset</h3>
+                        </div>
+                      </li>
+                    </div>
+                    <div class="highlight-container">
+                        <li>
+                        <div id="humidity" class="highlight">
+                          <h3>Humidity</h3>
+                        </div>
+                      </li>
+                        <li>
+                        <div id="visibility" class="highlight">
+                          <h3>Visibility</h3>
+                        </div>
+                      </li>
+                        <li>
+                        <div id="air" class="highlight">
+                          <h3>Air Quality</h3>
+                        </div>
+                      </li>
+                    </div>
+                 </ul>
+                </div>
+            </div>
+        </div>  
+    </div>
+</body>
+</html>
