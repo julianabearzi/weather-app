@@ -24,6 +24,18 @@ body {
     background-color: rgba(255, 255, 255, 0.849);
     border-radius: 2.5rem;
 }
+.container {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    width: 100%; 
+}
+.container-time {
+    display: flex;
+    flex-direction: column;
+    padding-top: 2.5rem;
+    width: 80%;
+}
 .navbar {
     display: flex;
     flex-direction: row;
@@ -39,16 +51,15 @@ body {
     margin-bottom: -10px;
 }
 .navbar .nav__weather a {
-  text-decoration: none;
-  border-radius: 50%;
-  padding: 0.5rem;
-  color: black;
-  background-color: white;
-  font-weight: bolder;
+    text-decoration: none;
+    border-radius: 50%;
+    padding: 0.5rem;
+    color: black;
+    background-color: white;
 }
-.navbar .nav__weather a:hover {
-   background-color: black;
-   color: white;
+.navbar .nav__weather a:nth-child(1) {
+    background-color: black;
+    color: white;
 }
 .navbar .nav__days {
     margin-left: 2.5rem;
@@ -65,50 +76,6 @@ body {
     text-decoration: none;
     border-bottom: 2px solid rgb(184, 183, 183);
     padding-bottom: 2px;
-}
-.container {
-    display: flex;
-    flex-direction: row;
-    height: 100%;
-    width: 100%; 
-}
-.container-today {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: center;
-  background-color: white;
-  border-radius: 30px;
-  padding-left: 2rem;
-  padding-top: 1rem;
-  width: 30%;
-}
-.container-today h1 {
-  font-size: 4rem;
-  font-weight: lighter;
-  margin: 0;
-}
-.container-today #today-date {
-    font-size: 1rem;
-    font-weight: lighter;
-}
-.container-today #today-date span {
-    color: rgb(184, 183, 183);
-}
-.container-today img {
-    width: 180px;
-    height: 180px;
-}
-.container-today .image-city {
-    width: 10rem;
-    height: 5rem;
-    border-radius: 10%;
-}
-.container-time {
-    display: flex;
-    flex-direction: column;
-    padding-top: 2.5rem;
-    width: 80%;
 }
 #week {
     display: flex;
@@ -138,6 +105,29 @@ body {
     width: 50px;
     height: 50px;
 }
+#week .day .week-day__clear{
+    width: 50px;
+    height: 50px;
+    background-image: url(../img/sun.png);
+}
+#week .day .week-day__rain{
+    background-image: url(../img/cloud-raining.png);
+    background-size: cover;
+    width: 50px;
+    height: 50px;
+}
+#week .day .week-day__clouds{
+    background-image: url(../img/cloudy-sunny.png);
+    background-size: cover;
+    width: 50px;
+    height: 50px;
+}
+#week .day .week-day__default{
+    background-image: url(../img/cloud-raining-sunny.png);
+    background-size: cover;
+    width: 50px;
+    height: 50px;
+}
 .day-degrees{
     display: flex;
     flex-direction: row;
@@ -151,8 +141,8 @@ body {
     font-weight: lighter;
 }
 .container-time__highlights{
-  display: flex;
-  flex-direction: column;
+    display: flex;
+    flex-direction: column;
 }
 .highlights__title {
     font-size: 0.8rem;
@@ -165,8 +155,7 @@ body {
 }
 .highlight-container {
     display: flex;
-    flex-direction: row;
-   
+    flex-direction: row;  
     padding-bottom: 0.5rem;
 }
 .highlight {
@@ -180,11 +169,73 @@ body {
     padding: 0.5rem;
     border-radius: 20px;
 }
+#humidity, #wind, #visibility, #air {
+    color: black;
+    font-size: 2rem;
+    text-align:start;
+    padding-top: 0.2rem;
+    font-weight: lighter;
+}
+#wind span {
+    font-size: 1.2rem;
+}
+#icon-sunrise {
+    width: 55px;
+    height: 50px;
+}
+#icon-sunset {
+    width: 50px;
+    height: 45px;
+}
+ #sunrise {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    color: black;
+    font-size: 1rem;
+    font-weight: lighter;
+    text-align: center;
+    padding-top: 1rem;
+}
+#uv-icon {
+    width: 150px;
+    height: 100px;
+}
+#uv-container {
+    position: relative;
+    display: inline-block;
+    text-align: center;
+}
+#uv-title{
+    display: flex;
+    align-self: flex-start;
+    flex-direction: row;
+}
+#uv{
+    font-size: 1.4rem;
+    font-weight: lighter;
+    color: black;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.container-today {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    background-color: white;
+    border-radius: 30px;
+    padding-left: 2rem;
+    padding-top: 1rem;
+    width: 30%;
+}
 .search-container {
     display: flex;
     flex-direction: row;
     align-items: baseline;
-   
 }
 #city {
     font-size: 0.7rem;
@@ -198,6 +249,27 @@ body {
     height: 12px;
     margin-right: 3px;
 }
+.container-today #today-icon {
+    background-image: url(../img/cloud-raining-sunny.png);
+    background-size: cover;
+    width: 180px;
+    height: 180px;
+}
+.container-today h1 {
+    font-size: 3rem;
+    font-weight: lighter;
+    margin: 0;
+}
+.container-today #today-date {
+    font-size: 1rem;
+    font-weight: lighter;
+}
+.container-today #today-date #hour {
+    color: rgb(184, 183, 183);
+}
+.container-today #today-date #day {
+    color: black;
+}
 #today-weather__list {
     list-style-type: none;
     padding:0;
@@ -205,9 +277,9 @@ body {
     width: 80%;
 }
 .today-weather__list--item {
-     display: flex;
-     flex-direction: row;
-     align-items: baseline;
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
 }
 #today-weather__list  .today-weather__list--item #rain-icon {
     background-image:  url(../img/rain.PNG);
@@ -223,18 +295,66 @@ body {
     height: 20px;
     margin-right: 1rem;
 }
+#today-weather__list .today-weather__list--item #cloud-icon.sunny {
+    background-image:  url(../img/sun.png);
+    background-size: cover;
+    width: 20px;
+    height: 20px;
+    margin-right: 1rem;
+}
+#today-weather__list .today-weather__list--item #cloud-icon.cloud_rain_sun {
+    background-image:  url(../img/cloud-raining-sunny.png);
+    background-size: cover;
+    width: 20px;
+    height: 20px;
+    margin-right: 1rem;
+}
 
+.container-today .image-city {
+    width: 10rem;
+    height: 5rem;
+    border-radius: 10%;
+}
+#today-icon.clouds {
+    background-image: url(../img/cloudy-sunny.png);
+    background-size: cover;
+    width: 180px;
+    height: 180px;
+}
+#today-icon.clear {
+    background-image: url(../img/sun.png);
+    background-size: cover;
+    width: 180px;
+    height: 180px;
+}
+#today-icon.rain {
+    background-image: url(../img/cloud-raining.png);
+    background-size: cover;
+    width: 180px;
+    height: 180px;
+}
+#today-icon.cloud-rain-sun {
+    background-image: url(../img/cloud-raining-sunny.png);
+    background-size: cover;
+    width: 180px;
+    height: 180px;
+}
 @media (max-width: 1200px) {
-   body{
-    overflow-y:visible;
-   }
-   .highlight{
-       width: 20vw;
-   }
+    body {
+      overflow-y:visible;
+    }
+    .highlight{
+      width: 20vw;
+    }
+    #icon-sunset, #icon-sunrise{
+        width: 30px;
+        height: 25px;
+    }
+
 }
 @media (max-width: 768px) {
     body{
-     overflow-y:visible;
+      overflow-y:visible;
     }
     .container-time{
         width: 100vw;
@@ -268,4 +388,8 @@ body {
     .navbar{
         padding-top: 2rem;
     }
- }
+    #icon-sunset, #icon-sunrise{
+        width: 50px;
+        height: 45px;
+    }
+}
