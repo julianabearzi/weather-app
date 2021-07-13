@@ -1,6 +1,7 @@
 var todayHours = document.getElementById('hour');
 var todayDay = document.getElementById('day');
 var todayIcon = document.getElementById('today-icon');
+var currentCity = document.getElementById('current-city');
 var todayDegrees = document.getElementById('today-degrees');
 var todayDescription = document.getElementById('today-description');
 var todayRainProb = document.getElementById('today-rain__prob');
@@ -107,7 +108,9 @@ function showCurrentWeather(data) {
         vis: '',
         wind_spd: '',
         aqi: '',
-        precip: ''
+        precip: '',
+        city_name: '',
+        country_code: ''
     }
     var description = data.data[0].weather.description;
     wheatherElement.temp = data.data[0].temp;
@@ -117,6 +120,8 @@ function showCurrentWeather(data) {
     wheatherElement.wind_spd = data.data[0].wind_spd;
     wheatherElement.aqi = data.data[0].aqi;
     wheatherElement.precip = data.data[0].precip;
+    wheatherElement.city_name = data.data[0].city_name;
+    wheatherElement.country_code = data.data[0].country_code;
     todayDegrees.innerHTML = wheatherElement.temp + '°C';
     todayDescription.innerHTML = description;
     todayRainProb.innerHTML = 'Rain - ' + wheatherElement.precip+'%';
@@ -125,6 +130,7 @@ function showCurrentWeather(data) {
     todayWind.innerHTML = wheatherElement.wind_spd + '<span>m/s</span>';
     todayAir.innerHTML = wheatherElement.aqi;
     todayUv.innerHTML = wheatherElement.uv;
+    currentCity.innerHTML = wheatherElement.city_name + ', '+ wheatherElement.country_code;
     changeIcon(description);
 }
 

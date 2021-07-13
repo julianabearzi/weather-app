@@ -24,14 +24,16 @@
                     <li  class="today-weather__list--item">
                         <div id="cloud-icon"></div>
                         <p id="today-description">Mostly Cloudy</p>
-                      </li>
+                    </li>
                     <li  class="today-weather__list--item">
                       <div id="rain-icon"></div>
                       <p id="today-rain__prob">Rain - 30%</p>
                     </li>
                 </ul>
-                <img src="img/city.jpg" class="image-city" alt="currentcity">
-                <h3 class="current-city"></h3>
+                <div class="container-current__city">
+                  <img src="img/city.jpg" class="image-city" alt="currentcity">
+                  <h3 id="current-city"></h3>
+                </div>
             </div>
 
             <div class="container-time">
@@ -122,6 +124,7 @@
                         <div class="highlight">
                           <h3>Wind Status</h3>
                           <h3 id="wind"></h3>
+                          <img id="wind-icon" src="img/wind-status.png" alt="airq">
                         </div>
                       </li>
                       <li>
@@ -136,18 +139,21 @@
                         <div class="highlight">
                           <h3>Humidity</h3>
                           <h3 id="humidity"></h3>
+                          <img id="hum-icon" src="img/humidity.png" alt="hum">
                         </div>
                       </li>
                       <li>
                         <div class="highlight">
                           <h3>Visibility</h3>
                           <h3 id="visibility"></h3>
+                          <img id="vis-icon" src="img/low-visibility.png" alt="vis">
                         </div>
                       </li>
                       <li>
                         <div class="highlight">
                           <h3>Air Quality</h3>
                           <h3 id="air"></h3>
+                          <img id="air-icon" src="img/wind.png" alt="airq">
                         </div>
                       </li>
                     </div>
