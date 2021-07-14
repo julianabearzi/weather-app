@@ -44,6 +44,7 @@ body {
     padding-bottom: 2rem;
     margin-right: 3rem;
     font-size: 0.8rem;
+    flex-wrap: wrap;
 }
 .navbar .nav__weather {
     margin-right: 1rem;
@@ -51,9 +52,12 @@ body {
     flex-direction: row;
 }
 .navbar .nav__weather .img__user {
-    width: 1.4rem;
-    height: 1.6rem; 
-    margin-bottom: -10px;
+    background-image: url(../img/image.png);
+    background-size: cover;
+    width: 1.8rem;
+    height: 1.8rem; 
+    cursor: pointer;
+    margin-left: 1.2rem;
 }
 .navbar .nav__weather a {
     text-decoration: none;
@@ -219,7 +223,7 @@ body {
     background-color: white;
     border-radius: 30px;
     padding-left: 2rem;
-    padding-top: 1rem;
+    padding-bottom: 3rem;
     width: 30%;
 }
 .search-container {
@@ -375,6 +379,8 @@ body {
         width: 100vw;
         border-bottom-left-radius: 0;
         border-bottom-right-radius: 0;
+        padding-top: 1rem;
+        padding-bottom: 0;
     }
     .highlights__title {
        text-align: center;
@@ -400,7 +406,6 @@ body {
     }
     .navbar{
         padding-top: 2rem;
-        margin-left: 2rem;
     }
     #icon-sunset, #icon-sunrise{
         width: 50px;
@@ -409,7 +414,8 @@ body {
 }
 @media (max-width: 320px) {
     .navbar .nav__weather {
-        margin-left: 0.5rem;
+        margin-left: 2.5rem;
+        margin-top: 1rem;
     }
     #week .day {
        margin-right: 1rem;

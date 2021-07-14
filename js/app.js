@@ -110,7 +110,7 @@ function showCurrentWeather(data) {
         aqi: '',
         precip: '',
         city_name: '',
-        country_code: ''
+        country_code: '',
     }
     var description = data.data[0].weather.description;
     wheatherElement.temp = data.data[0].temp;
@@ -132,6 +132,17 @@ function showCurrentWeather(data) {
     todayUv.innerHTML = wheatherElement.uv;
     currentCity.innerHTML = wheatherElement.city_name + ', '+ wheatherElement.country_code;
     changeIcon(description);
+    if(wheatherElement.country_code === 'AR') {
+        var time = new Date();
+        var hour = time.getHours();
+        var hoursIn12HrFormat = hour >= 13 ? hour %12: hour;
+        var minutes = time.getMinutes();
+        var ampm = hour >=12 ? 'PM' : 'AM';
+        todayHours.innerHTML = (hoursIn12HrFormat < 10? '0'+hoursIn12HrFormat : hoursIn12HrFormat) + ':' + (minutes < 10? '0'+minutes: minutes)+ ' ' + '<span id="am-pm">'+ampm+'</span>';
+    }
+    else {
+        todayHours.innerHTML = '';
+    }
 }
 
 function TimeFormat(num) {
@@ -162,30 +173,21 @@ function changeIcon(m){
 
 function GetToday(today){
     if(today.substring(0,3) == 'Fri' || today.substring(0,3) == 'Mon' || today.substring(0,3) == 'Sun') {
-       todayDay.innerHTML = today.substring(0,3) + 'day, ';
+       todayDay.innerHTML = today.substring(0,3) + 'day ';
     }
     else if(today.substring(0,3) == 'Wed'){
-        todayDay.innerHTML = today.substring(0,3) + 'nesday, ';
+        todayDay.innerHTML = today.substring(0,3) + 'nesday ';
     }
     else if(today.substring(0,3) == 'Thu'){
-        todayDay.innerHTML = today.substring(0,3) + 'rsday, ';
+        todayDay.innerHTML = today.substring(0,3) + 'rsday ';
     }
     else if(today.substring(0,3) == 'Sat'){
-        todayDay.innerHTML = today.substring(0,3) + 'urday, ';
+        todayDay.innerHTML = today.substring(0,3) + 'urday ';
     }
     else {
-        todayDay.innerHTML = today.substring(0,3) + 'sday, ';
+        todayDay.innerHTML = today.substring(0,3) + 'sday ';
     }
 }
-
-setInterval(function() {
-    var time = new Date();
-    var hour = time.getHours();
-    var hoursIn12HrFormat = hour >= 13 ? hour %12: hour;
-    var minutes = time.getMinutes();
-    var ampm = hour >=12 ? 'PM' : 'AM';
-    todayHours.innerHTML = (hoursIn12HrFormat < 10? '0'+hoursIn12HrFormat : hoursIn12HrFormat) + ':' + (minutes < 10? '0'+minutes: minutes)+ ' ' + '<span id="am-pm">'+ampm+'</span>'
-}, 1000);
 
 var init = function() {
     search('Rosario,AR');

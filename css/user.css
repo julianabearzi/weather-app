@@ -1,0 +1,62 @@
+html {
+    box-sizing: border-box;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+body {
+    font-family: 'Questrial', sans-serif;;
+    background-color: rgb(204, 204, 204);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 3rem 4rem;
+    overflow-y: hidden;
+    pointer-events: none;
+}
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+    width: 30rem;
+    background-color: rgba(255, 255, 255, 0.849);
+    border-radius: 2.5rem;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+}
+.form .img {
+    background-image: url(../img/user.png);
+    background-size: cover;
+    width: 40px;
+    height: 40px;
+    align-self: center;
+    margin-bottom: 1rem;
+}
+.form h1 {
+   text-align: center;
+   margin-bottom: 1rem;
+}
+.field {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 0.5rem;
+}
+.field label {
+    font-weight: bolder;
+    font-size: 1rem;
+}
+.field h3 {
+    font-weight: lighter;
+    color: rgb(184, 183, 183);
+    border: 2px solid aquamarine;
+    padding: 0.5rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+}
